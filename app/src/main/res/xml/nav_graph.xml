@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <!-- Home Fragment (with RecyclerView) -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.yourpackage.name.HomeFragment"
+        android:label="Home Fragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+    </fragment>
+
+    <!-- Note Fragment (to add/edit notes) -->
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.yourpackage.name.NoteFragment"
+        android:label="Note Fragment"
+        tools:layout="@layout/fragment_note">
+        <argument
+            android:name="noteId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+
+</navigation>
